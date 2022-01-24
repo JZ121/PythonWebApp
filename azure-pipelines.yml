@@ -14,8 +14,7 @@ variables:
   webAppName: 'jafarPythonWebApp'
 
   # Agent VM image name
-pool:
-  name: SelfHosted-Jafar
+  vmImageName: SelfHosted-Jafar
 
   # Environment name
   environmentName: 'jafarPythonWebApp'
