@@ -14,7 +14,8 @@ variables:
   webAppName: 'jafarPythonWebApp'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+pool:
+  name: SelfHosted-Jafar
 
   # Environment name
   environmentName: 'jafarPythonWebApp'
