@@ -26,7 +26,7 @@ node {
       echo 'inside deploy'
       withCredentials([usernamePassword(credentialsId: 'jenkins2azure2', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        //sh '''
-        bat "az login --service-principal -u ${AZURE_CLIENT_ID} -p ${AZURE_CLIENT_SECRET} -t ${AZURE_TENANT_ID}'
+        bat "az login --service-principal -u ${AZURE_CLIENT_ID} -p ${AZURE_CLIENT_SECRET} -t ${AZURE_TENANT_ID}"
         bat "az account set -s ${AZURE_SUBSCRIPTION_ID}"
         //'''
       }
