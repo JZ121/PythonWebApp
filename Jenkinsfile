@@ -22,12 +22,14 @@ node {
       def resourceGroup = 'TestRG'
       def webAppName = 'jafarpythonwebapp'
       // login Azure
+      echo 'inside deploy'
       withCredentials([usernamePassword(credentialsId: 'jenkins2azure2', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
         '''
       }
+      echo 'after login' 
       // get publish settings
       //def pubProfilesJson = sh script: "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName", returnStdout: true
       //def ftpProfile = getFtpPublishProfile pubProfilesJson
