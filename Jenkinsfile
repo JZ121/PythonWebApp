@@ -19,6 +19,7 @@ node {
     }
   
     stage('deploy') {
+      echo 'Tenant=${AZURE_TENANT_ID}'
       def resourceGroup = 'TestRG'
       def webAppName = 'jafarpythonwebapp'
       // login Azure
