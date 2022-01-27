@@ -39,6 +39,9 @@ node {
       bat "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName > pubPfor.json"
       bat "echo -------------------------------------------"
       //bat "echo JSON=${pubProfilesJson}"
+      File file = new File(pubPfor.json)
+      String fileContent = file.text
+      echo "${fileContent}"
       //def ftpProfile = getFtpPublishProfile pubProfilesJson
       //upload package
       //sh "curl -T target/calculator-1.0.war $ftpProfile.url/webapps/ROOT.war -u '$ftpProfile.username:$ftpProfile.password'"
