@@ -39,7 +39,7 @@ node {
       bat "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName > pubPfor.json"
       bat "echo -------------------------------------------"
       //bat "echo JSON=${pubProfilesJson}"
-      File file = new File(pubPfor.json)
+      File file = new File("pubPfor.json")
       String fileContent = file.text
       echo "${fileContent}"
       //def ftpProfile = getFtpPublishProfile pubProfilesJson
