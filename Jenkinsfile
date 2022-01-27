@@ -37,7 +37,7 @@ node {
       def pubProfilesJson = '{"SQLServerDBConnectionString": "","controlPanelLink": "http://windows.azure.com"}'
       pubProfilesJson = bat(script:"az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName", returnStdout: true)
       bat "echo -------------------------------------------"
-      echo '$pubProfilesJson'
+      bat "echo JSON=${pubProfilesJson}"
       //def ftpProfile = getFtpPublishProfile pubProfilesJson
       //upload package
       //sh "curl -T target/calculator-1.0.war $ftpProfile.url/webapps/ROOT.war -u '$ftpProfile.username:$ftpProfile.password'"
