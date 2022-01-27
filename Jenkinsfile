@@ -34,7 +34,7 @@ node {
       }
       echo 'after login' 
       //get publish settings
-      def pubProfilesJson = bat "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName"
+      def pubProfilesJson = bat script: "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName"
       bat "echo -------------------------------------------"
       bat "echo ${pubProfilesJson}"
       def ftpProfile = getFtpPublishProfile pubProfilesJson
