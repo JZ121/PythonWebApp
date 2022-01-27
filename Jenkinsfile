@@ -33,7 +33,7 @@ node {
       echo 'after login' 
       //get publish settings
       def pubProfilesJson = bat "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName"
-      def ftpProfile = getFtpPublishProfile pubProfilesJson
+      //def ftpProfile = getFtpPublishProfile pubProfilesJson
       //upload package
       //sh "curl -T target/calculator-1.0.war $ftpProfile.url/webapps/ROOT.war -u '$ftpProfile.username:$ftpProfile.password'"
       // log out
