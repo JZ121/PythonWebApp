@@ -5,7 +5,9 @@ def getFtpPublishProfile(def publishProfilesJson) {
   def pubProfiles = new JsonSlurper().parseText(publishProfilesJson)
   echo 'after def pubprofile'
   for (p in pubProfiles)
+    echo 'inside For'
     if (p['publishMethod'] == 'FTP')
+      echo 'inside if'
       return [url: p.publishUrl, username: p.userName, password: p.userPWD]
 }
 
