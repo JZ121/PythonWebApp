@@ -25,8 +25,8 @@ node {
       echo 'inside deploy'
       withCredentials([usernamePassword(credentialsId: 'jenkins2azure2', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        //sh '''
-       sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
-       sh 'az account set -s $AZURE_SUBSCRIPTION_ID'
+       bat 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+       bat 'az account set -s $AZURE_SUBSCRIPTION_ID'
         //'''
       }
       echo 'after login' 
@@ -36,7 +36,7 @@ node {
       // upload package
       //sh "curl -T target/calculator-1.0.war $ftpProfile.url/webapps/ROOT.war -u '$ftpProfile.username:$ftpProfile.password'"
       // log out
-      sh 'az logout'
+      bat 'az logout'
     }
   }
 }
