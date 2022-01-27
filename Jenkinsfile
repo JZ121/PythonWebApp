@@ -35,7 +35,7 @@ node {
       echo 'after login' 
       //get publish settings
       def pubProfilesJson = '{"SQLServerDBConnectionString": "","controlPanelLink": "http://windows.azure.com"}'
-      pubProfilesJson = bat "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName"
+      pubProfilesJson = bat ("az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName")
       bat "echo -------------------------------------------"
       bat "echo ${pubProfilesJson}"
       //def ftpProfile = getFtpPublishProfile pubProfilesJson
